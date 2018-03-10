@@ -6,6 +6,13 @@ module.exports = {
       host: "localhost",
       port: 8545,
       network_id: "*" // Match any network id
+    },
+    rinkeby: {
+      host: "localhost",
+      port: 8545,
+      from: "0xf17f52151EbEF6C7334FAD080c5704D77216b732",
+      network_id: 4,
+      gas: 4612388
     }
   }
 };

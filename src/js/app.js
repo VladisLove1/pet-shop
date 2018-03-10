@@ -8,7 +8,7 @@ App = {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
 
-      for (i = 0; i < data.length; i ++) {
+      for (i = 0; i < data.length; i++) {
         petTemplate.find('.panel-title').text(data[i].name);
         petTemplate.find('img').attr('src', data[i].picture);
         petTemplate.find('.pet-breed').text(data[i].breed);
@@ -24,17 +24,25 @@ App = {
   },
 
   initWeb3: function() {
-    /*
-     * Replace me...
-     */
+    if(typeof web3 !== 'undefined') {
+      App.web3Provider = web3.currentProvider;
+    } else {
+      App.web3Provider = new web3.providers.HttpProvider("http://localhost:8545");
+    }
+    web3 = new Web3(App.web3Provider);
 
     return App.initContract();
   },
 
   initContract: function() {
-    /*
-     * Replace me...
-     */
+    $.getJson('Adoption.sol', function (data) {
+        var AdoptionArtifact = data;
+        App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+
+        App.contracts.Adoption.setProvider(App.web3Provider);
+
+        return App.markAdopted();
+    });
 
     return App.bindEvents();
   },
@@ -44,9 +52,21 @@ App = {
   },
 
   markAdopted: function(adopters, account) {
-    /*
-     * Replace me...
-     */
+    var adoptionInstance;
+
+    App.contracts.Adoption.deployed().then(function(instance) {
+      adoptionInstance = instance;
+
+      return adoptionInstance.getAdopters.call();
+    }).then(function(adopters) {
+      for (i = 0; i < adopters.length; i++) {
+        if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
+          $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+        }
+      }
+    }).catch(function(err) {
+      console.log(err.message);
+    });
   },
 
   handleAdopt: function(event) {
@@ -54,9 +74,17 @@ App = {
 
     var petId = parseInt($(event.target).data('id'));
 
-    /*
-     * Replace me...
-     */
+    var adoptionInstance;
+
+    App.contracts.Adoption.deployed().then(function(instance) {
+      adoptionInstance = instance;
+
+      return adoptionInstance.adopt(petId, {from: account});
+    }).then(function(result) {
+      return App.markAdopted();
+    }).catch(function(err) {
+      console.log(err.message);
+    });
   }
 
 };
