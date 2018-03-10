@@ -11,12 +11,10 @@ contract Adoption {
 
         return petId;
     }
-
     function getAdopters() public view returns (address[16]) {
         return adopters;
     }
-
-    function Adoption(){
+    function Adoption() public {
 
     }
 
