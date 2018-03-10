@@ -21,12 +21,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
       "constant": false,
       "inputs": [
         {
@@ -60,20 +54,20 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b6102dd8061001e6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633de4eb171461005c57806343ae80d3146100ad5780638588b2c514610110575b600080fd5b341561006757600080fd5b61006f610147565b6040518082601060200280838360005b8381101561009a57808201518184015260208101905061007f565b5050505090500191505060405180910390f35b34156100b857600080fd5b6100ce60048080359060200190919050506101c8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011b57600080fd5b61013160048080359060200190919050506101fd565b6040518082815260200191505060405180910390f35b61014f610272565b60006010806020026040519081016040528092919082601080156101be576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610174575b5050505050905090565b6000816010811015156101d757fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008082101580156102105750600f8211155b151561021b57600080fd5b3360008360108110151561022b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff1681526020019060019003908161028357905050905600a165627a7a72305820ce0c394482232b5202f8bc7ebe50d73d2b9c2dc54d6c5f13eac1d0e6bd0d24210029",
-  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633de4eb171461005c57806343ae80d3146100ad5780638588b2c514610110575b600080fd5b341561006757600080fd5b61006f610147565b6040518082601060200280838360005b8381101561009a57808201518184015260208101905061007f565b5050505090500191505060405180910390f35b34156100b857600080fd5b6100ce60048080359060200190919050506101c8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011b57600080fd5b61013160048080359060200190919050506101fd565b6040518082815260200191505060405180910390f35b61014f610272565b60006010806020026040519081016040528092919082601080156101be576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610174575b5050505050905090565b6000816010811015156101d757fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008082101580156102105750600f8211155b151561021b57600080fd5b3360008360108110151561022b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff1681526020019060019003908161028357905050905600a165627a7a72305820ce0c394482232b5202f8bc7ebe50d73d2b9c2dc54d6c5f13eac1d0e6bd0d24210029",
-  "sourceMap": "26:358:0:-;;;346:35;;;;;;;;26:358;;;;;;",
-  "deployedSourceMap": "26:358:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;252:89;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;51:27:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;85:162;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;252:89;296:11;;:::i;:::-;326:8;319:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;252:89;:::o;51:27::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o;85:162::-;128:4;161:1;152:5;:10;;:25;;;;;175:2;166:5;:11;;152:25;144:34;;;;;;;;207:10;189:8;198:5;189:15;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;235:5;228:12;;85:162;;;:::o;26:358::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.17;\n\ncontract Adoption {\n\n    address[16] public adopters;\n\n    function adopt(uint petId) public returns (uint) {\n        require(petId >= 0 && petId <= 15);\n\n        adopters[petId] = msg.sender;\n\n        return petId;\n    }\n    function getAdopters() public view returns (address[16]) {\n        return adopters;\n    }\n    function Adoption() public {\n\n    }\n\n}\n",
+  "bytecode": "0x6060604052341561000f57600080fd5b6102dd8061001e6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633de4eb171461005c57806343ae80d3146100ad5780638588b2c514610110575b600080fd5b341561006757600080fd5b61006f610147565b6040518082601060200280838360005b8381101561009a57808201518184015260208101905061007f565b5050505090500191505060405180910390f35b34156100b857600080fd5b6100ce60048080359060200190919050506101c8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011b57600080fd5b61013160048080359060200190919050506101fd565b6040518082815260200191505060405180910390f35b61014f610272565b60006010806020026040519081016040528092919082601080156101be576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610174575b5050505050905090565b6000816010811015156101d757fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008082101580156102105750600f8211155b151561021b57600080fd5b3360008360108110151561022b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff1681526020019060019003908161028357905050905600a165627a7a7230582038476d249c5f692d0b72bfab51877b0a34a39318893105576c5109f25917dd700029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633de4eb171461005c57806343ae80d3146100ad5780638588b2c514610110575b600080fd5b341561006757600080fd5b61006f610147565b6040518082601060200280838360005b8381101561009a57808201518184015260208101905061007f565b5050505090500191505060405180910390f35b34156100b857600080fd5b6100ce60048080359060200190919050506101c8565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561011b57600080fd5b61013160048080359060200190919050506101fd565b6040518082815260200191505060405180910390f35b61014f610272565b60006010806020026040519081016040528092919082601080156101be576020028201915b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610174575b5050505050905090565b6000816010811015156101d757fe5b016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008082101580156102105750600f8211155b151561021b57600080fd5b3360008360108110151561022b57fe5b0160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550819050919050565b610200604051908101604052806010905b600073ffffffffffffffffffffffffffffffffffffffff1681526020019060019003908161028357905050905600a165627a7a7230582038476d249c5f692d0b72bfab51877b0a34a39318893105576c5109f25917dd700029",
+  "sourceMap": "26:317:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:317:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;252:89;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;51:27:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;85:162;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;252:89;296:11;;:::i;:::-;326:8;319:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;252:89;:::o;51:27::-;;;;;;;;;;;;;;;;;;;;;;;;;:::o;85:162::-;128:4;161:1;152:5;:10;;:25;;;;;175:2;166:5;:11;;152:25;144:34;;;;;;;;207:10;189:8;198:5;189:15;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;235:5;228:12;;85:162;;;:::o;26:317::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\ncontract Adoption {\n\n    address[16] public adopters;\n\n    function adopt(uint petId) public returns (uint) {\n        require(petId >= 0 && petId <= 15);\n\n        adopters[petId] = msg.sender;\n\n        return petId;\n    }\n    function getAdopters() public view returns (address[16]) {\n        return adopters;\n    }\n}\n",
   "sourcePath": "/home/vlad/pet-shop/contracts/Adoption.sol",
   "ast": {
     "absolutePath": "/home/vlad/pet-shop/contracts/Adoption.sol",
     "exportedSymbols": {
       "Adoption": [
-        47
+        43
       ]
     },
-    "id": 48,
+    "id": 44,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -93,9 +87,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 47,
+        "id": 43,
         "linearizedBaseContracts": [
-          47
+          43
         ],
         "name": "Adoption",
         "nodeType": "ContractDefinition",
@@ -105,7 +99,7 @@
             "id": 5,
             "name": "adopters",
             "nodeType": "VariableDeclaration",
-            "scope": 47,
+            "scope": 43,
             "src": "51:27:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -294,7 +288,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 119,
+                      "referencedDeclaration": 115,
                       "src": "144:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -377,7 +371,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 116,
+                        "referencedDeclaration": 112,
                         "src": "207:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -503,7 +497,7 @@
               ],
               "src": "127:6:0"
             },
-            "scope": 47,
+            "scope": 43,
             "src": "85:162:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -610,60 +604,27 @@
               ],
               "src": "295:13:0"
             },
-            "scope": 47,
+            "scope": 43,
             "src": "252:89:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 45,
-              "nodeType": "Block",
-              "src": "373:8:0",
-              "statements": []
-            },
-            "id": 46,
-            "implemented": true,
-            "isConstructor": true,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "Adoption",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 43,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "363:2:0"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 44,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "373:0:0"
-            },
-            "scope": 47,
-            "src": "346:35:0",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
           }
         ],
-        "scope": 48,
-        "src": "26:358:0"
+        "scope": 44,
+        "src": "26:317:0"
       }
     ],
-    "src": "0:385:0"
+    "src": "0:344:0"
   },
   "legacyAST": {
     "absolutePath": "/home/vlad/pet-shop/contracts/Adoption.sol",
     "exportedSymbols": {
       "Adoption": [
-        47
+        43
       ]
     },
-    "id": 48,
+    "id": 44,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -683,9 +644,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 47,
+        "id": 43,
         "linearizedBaseContracts": [
-          47
+          43
         ],
         "name": "Adoption",
         "nodeType": "ContractDefinition",
@@ -695,7 +656,7 @@
             "id": 5,
             "name": "adopters",
             "nodeType": "VariableDeclaration",
-            "scope": 47,
+            "scope": 43,
             "src": "51:27:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -884,7 +845,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 119,
+                      "referencedDeclaration": 115,
                       "src": "144:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -967,7 +928,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 116,
+                        "referencedDeclaration": 112,
                         "src": "207:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1093,7 +1054,7 @@
               ],
               "src": "127:6:0"
             },
-            "scope": 47,
+            "scope": 43,
             "src": "85:162:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1200,64 +1161,31 @@
               ],
               "src": "295:13:0"
             },
-            "scope": 47,
+            "scope": 43,
             "src": "252:89:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 45,
-              "nodeType": "Block",
-              "src": "373:8:0",
-              "statements": []
-            },
-            "id": 46,
-            "implemented": true,
-            "isConstructor": true,
-            "isDeclaredConst": false,
-            "modifiers": [],
-            "name": "Adoption",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 43,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "363:2:0"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 44,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "373:0:0"
-            },
-            "scope": 47,
-            "src": "346:35:0",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
           }
         ],
-        "scope": 48,
-        "src": "26:358:0"
+        "scope": 44,
+        "src": "26:317:0"
       }
     ],
-    "src": "0:385:0"
+    "src": "0:344:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {
-    "1520696657098": {
+    "4447": {
       "events": {},
       "links": {},
-      "address": "0xa46c40d98ce3fab8e13272fa5c715a932fb11752",
-      "transactionHash": "0x664e0714b5870c1ebaf2165cf4728013c34a3e73658a67492cbf879c88b24911"
+      "address": "0x82d50ad3c1091866e258fd0f1a7cc9674609d254",
+      "transactionHash": "0x9a954c8788f2061a439ae4852022cb107793fb2c3a9f4e7291e461539890b409"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-10T15:48:48.409Z"
+  "updatedAt": "2018-03-10T22:37:15.773Z"
 }
